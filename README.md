@@ -1,5 +1,7 @@
 logikai fejtörő
 
+EZÜST
+
 user választ prog megmondja ez volt vagy nem
 grafikus prog
 
