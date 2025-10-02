@@ -13,3 +13,4 @@ bronz - arany hazudik
 OOP, MVC
 
 Nagy Eszter, Varga Dorothea
+<img width="542" height="199" alt="Képernyőkép 2025-10-02 155444" src="https://github.com/user-attachments/assets/e39a3946-9b1d-41ed-9245-0d03ab990e23" />
