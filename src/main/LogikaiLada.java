@@ -6,14 +6,12 @@ import vezerlo.GUIVezerlo;
 
 public class LogikaiLada {
 
-    public  LogikaiLada() {
+    public LogikaiLada() {
 
         LadaModell modell = new LadaModell();
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
- ;
-                
                 GUINezet nezet = new GUINezet();
                 GUIVezerlo vezerlo = new GUIVezerlo(modell, nezet);
                 vezerlo.feladat();
@@ -22,7 +20,7 @@ public class LogikaiLada {
     }
 
     public static void main(String[] args) {
-        new LadaModell();
+        new LogikaiLada();
     }
     
 }

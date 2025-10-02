@@ -22,8 +22,7 @@ public class GUIVezerlo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String lada = nezet.ladaKivalaszt();
-                modell.setLada(lada);
-                nezet.mutat("láda kiválasztva");
+                nezet.mutat(lada + " láda kiválasztva");
             }
         });
     }
