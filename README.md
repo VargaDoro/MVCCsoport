@@ -1,6 +1,7 @@
 logikai fejtörő
 
-EZÜST
+EZÜSTnél van
+Bronz mondd igazat
 
 user választ prog megmondja ez volt vagy nem
 grafikus prog
