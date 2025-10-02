@@ -2,7 +2,10 @@ package vezerlo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import modell.LadaModell;
 import nezet.GUINezet;
@@ -19,18 +22,27 @@ public class GUIVezerlo {
     
     public void feladat() {
         JButton btnValaszt = nezet.getbtnValaszt();
+        String helyesLada = "Ezüst";
         btnValaszt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String lada = nezet.ladaKivalaszt();
-                String helyesLada = "Ezüst";
                 nezet.mutat(lada + " láda kiválasztva");
                 if (lada == helyesLada) {
-                    nezet.mutat("A nem hazudozó ládát választottad");
+                    nezet.mutat("JEJ megtaláltad");
                 }else{
-                    nezet.mutat(lada + " láda hazudik, ez a jó láda: " + helyesLada);
+                    nezet.mutat(lada + " láda nem rejti a kincset");
                 }
-               
+            }
+        });
+        
+        JCheckBox chb = nezet.getChbHelyesValasz();
+        chb.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (chb.isSelected()) {
+                    nezet.mutat("A helyes láda: "+helyesLada);
+                }
             }
         });
     }

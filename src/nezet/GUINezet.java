@@ -1,6 +1,7 @@
 package nezet;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 
 public class GUINezet extends javax.swing.JFrame {
@@ -20,6 +21,10 @@ public class GUINezet extends javax.swing.JFrame {
     public String ladaKivalaszt() {
         return (String)cmbLadak.getSelectedItem();
     }
+
+    public JCheckBox getChbHelyesValasz() {
+        return chbHelyesValasz;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -35,6 +40,7 @@ public class GUINezet extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         edpValasz = new javax.swing.JEditorPane();
         btnValaszt = new javax.swing.JButton();
+        chbHelyesValasz = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,6 +107,8 @@ public class GUINezet extends javax.swing.JFrame {
 
         btnValaszt.setText("VÁLASZTÁS");
 
+        chbHelyesValasz.setText("Helyes válasz mutatása");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -109,7 +117,10 @@ public class GUINezet extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnValaszt))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnValaszt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chbHelyesValasz)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -121,7 +132,9 @@ public class GUINezet extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnValaszt)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnValaszt)
+                    .addComponent(chbHelyesValasz))
                 .addContainerGap())
         );
 
@@ -146,6 +159,7 @@ public class GUINezet extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnValaszt;
+    private javax.swing.JCheckBox chbHelyesValasz;
     private javax.swing.JComboBox<String> cmbLadak;
     private javax.swing.JEditorPane edpValasz;
     private javax.swing.JLabel jLabel2;

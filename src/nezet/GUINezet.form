@@ -56,7 +56,11 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel1" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
-                      <Component id="btnValaszt" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnValaszt" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="chbHelyesValasz" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -72,7 +76,10 @@
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnValaszt" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnValaszt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="chbHelyesValasz" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -199,6 +206,11 @@
         <Component class="javax.swing.JButton" name="btnValaszt">
           <Properties>
             <Property name="text" type="java.lang.String" value="V&#xc1;LASZT&#xc1;S"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="chbHelyesValasz">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Helyes v&#xe1;lasz mutat&#xe1;sa"/>
           </Properties>
         </Component>
       </SubComponents>
