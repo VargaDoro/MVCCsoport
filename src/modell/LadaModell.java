@@ -4,7 +4,7 @@ public class LadaModell {
 
     private String lada;
 
-    public LadaModell(String lada) {
+    public LadaModell() {
         this.lada = lada;
     }
 
