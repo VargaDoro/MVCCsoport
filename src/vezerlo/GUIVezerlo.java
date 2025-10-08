@@ -20,12 +20,26 @@ public class GUIVezerlo {
         nezet.setVisible(true);
     }
     
+    private String ladaSzovegek(){
+        String lada = nezet.ladaKivalaszt();
+        if (lada == "Arany") {
+            modell.setSzoveg("én rejtem a kincset");
+        }else if (lada == "Ezüst"){
+            modell.setSzoveg("nem én rejtem a kincset");
+        }else if (lada == "Bronz"){
+            modell.setSzoveg("hazudik az arany");
+        }else{
+            modell.setSzoveg("nincs ilyen láda");
+        }
+        return modell.getSzoveg();
+    }
+    
     public void feladat() {
         JComboBox<String> ladak = nezet.getCmbLadak();
         ladak.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                nezet.szovegMutat(""+modell.getSzoveg());
+               nezet.szovegMutat(ladaSzovegek());
             }
         });
         
