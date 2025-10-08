@@ -3,6 +3,12 @@ package nezet;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+/////////////////////////////////////////////////////////////////
+import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
+import java.awt.Color;
+import java.awt.Graphics;
+/////////////////////////////////////////////////////////////////
 
 public class GUINezet extends javax.swing.JFrame {
 
@@ -26,6 +32,83 @@ public class GUINezet extends javax.swing.JFrame {
         return chbHelyesValasz;
     }
     
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Konfetti animációs panel
+    private ConfettiPanel confettiPanel;
+
+    public void konfettiIndit() {
+        if (confettiPanel == null) {
+            confettiPanel = new ConfettiPanel();
+            getLayeredPane().add(confettiPanel, JLayeredPane.POPUP_LAYER);
+            confettiPanel.setBounds(0, 0, getWidth(), getHeight());
+        }
+        confettiPanel.startConfetti();
+    }
+
+    // ===== Belső osztály: konfetti effekt =====
+    class ConfettiPanel extends JPanel {
+        private java.util.List<Particle> particles = new java.util.ArrayList<>();
+        private javax.swing.Timer timer;
+        private java.util.Random rand = new java.util.Random();
+
+        public ConfettiPanel() {
+            setOpaque(false);
+        }
+
+        public void startConfetti() {
+            particles.clear();
+            for (int i = 0; i < 100; i++) {
+                particles.add(new Particle(
+                        rand.nextInt(getWidth()),
+                        rand.nextInt(50),
+                        new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+                ));
+            }
+
+            if (timer != null && timer.isRunning()) timer.stop();
+
+            timer = new javax.swing.Timer(30, e -> {
+                for (Particle p : particles) p.update(getHeight());
+                repaint();
+            });
+            timer.start();
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            for (Particle p : particles) p.draw(g);
+        }
+    }
+
+    class Particle {
+        int x, y, size;
+        double dx, dy;
+        Color color;
+
+        public Particle(int x, int y, Color color) {
+            this.x = x;
+            this.y = y;
+            this.color = color;
+            this.dx = -1 + Math.random() * 2;
+            this.dy = 2 + Math.random() * 3;
+            this.size = 5 + (int)(Math.random() * 8);
+        }
+
+        public void update(int panelHeight) {
+            y += dy;
+            x += dx;
+            if (y > panelHeight) y = 0; // újra hullik
+        }
+
+        public void draw(Graphics g) {
+            g.setColor(color);
+            g.fillOval(x, y, size, size);
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
