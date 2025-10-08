@@ -21,6 +21,14 @@ public class GUIVezerlo {
     }
     
     public void feladat() {
+        JComboBox<String> ladak = nezet.getCmbLadak();
+        ladak.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nezet.szovegMutat(""+modell.getSzoveg());
+            }
+        });
+        
         JButton btnValaszt = nezet.getbtnValaszt();
         String helyesLada = "Ezüst";
         btnValaszt.addActionListener(new ActionListener() {
@@ -28,7 +36,7 @@ public class GUIVezerlo {
             public void actionPerformed(ActionEvent e) {
                 String lada = nezet.ladaKivalaszt();
                 nezet.mutat(lada + " láda kiválasztva");
-                if (lada == helyesLada) {
+                if (lada.equals(helyesLada)) {
                     nezet.mutat("JEJ megtaláltad");
                 }else{
                     nezet.mutat(lada + " láda nem rejti a kincset");
