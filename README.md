@@ -13,7 +13,8 @@ bronz - arany hazudik
 OOP, MVC
 
 Nagy Eszter, Varga Dorothea
-<img width="542" height="199" alt="Képernyőkép 2025-10-02 155444" src="https://github.com/user-attachments/assets/e39a3946-9b1d-41ed-9245-0d03ab990e23" />
+
+<img width="531" height="205" alt="Képernyőkép 2025-10-08 150236" src="https://github.com/user-attachments/assets/985b3e87-190f-4a1b-b668-d424750cae8c" />
 
 felosztás
 Eszti: modell, main
