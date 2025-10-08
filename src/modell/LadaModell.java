@@ -21,4 +21,8 @@ public class LadaModell {
     public void setSzoveg(String szoveg) {
         this.szoveg = szoveg;
     }
+
+    public void setLada(String lada) {
+        this.lada = lada;
+    }
 }
