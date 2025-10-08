@@ -20,7 +20,7 @@ public class GUIVezerlo {
         nezet.setVisible(true);
     }
     
-    private String ladaSzovegek(){
+    public String ladaSzovegek(){
         String lada = nezet.ladaKivalaszt();
         if (lada == "Arany") {
             modell.setSzoveg("én rejtem a kincset");
@@ -32,6 +32,22 @@ public class GUIVezerlo {
             modell.setSzoveg("nincs ilyen láda");
         }
         return modell.getSzoveg();
+        /*String lada = nezet.ladaKivalaszt();
+        switch (lada) {
+            case "Arany":
+                modell.setSzoveg("én rejtem a kincset");
+                break;
+            case "Ezüst":
+                modell.setSzoveg("nem én rejtem a kincset");
+                break;
+            case "Bronz":
+                modell.setSzoveg("hazudik az arany");
+                break;
+            default:
+                modell.setSzoveg("nincs ilyen láda");
+                break;
+        }
+        return modell.getSzoveg();*/
     }
     
     public void feladat() {
