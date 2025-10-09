@@ -114,7 +114,10 @@ public class GUINezet extends javax.swing.JFrame {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+    /**
+     *
+     * @param szoveg
+     */
     public void szovegMutat(String szoveg){
         edpSzovegMutat.setText(szoveg);
     }

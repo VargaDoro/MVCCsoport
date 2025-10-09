@@ -7,13 +7,12 @@ import nezet.GUINezet;
 public class LadaValasztasTest {
 
     public static void main(String[] args) {
+        LadaValasztasTest teszt = new LadaValasztasTest();
 
         LadaModell modell = new LadaModell();
         GUINezet nezet = new GUINezet();
         GUIVezerlo vezerlo = new GUIVezerlo(modell, nezet);
         vezerlo.feladat();
-
-        LadaValasztasTest teszt = new LadaValasztasTest();
 
         teszt.testMindenLadanVanFelirat(modell);
         teszt.testFeliratokSzovege(modell);
@@ -60,6 +59,21 @@ public class LadaValasztasTest {
 
     public void testBenneAKincsNincsBenne(GUINezet nezet, LadaModell modell, GUIVezerlo vezerlo) {
         //Eszter
+
+// Ezüst láda kiválasztása
+        nezet.getCmbLadak().setSelectedItem("Ezüst");
+        nezet.getbtnValaszt().doClick();
+        assert nezet.edpValasz.getText().equals("JEJ megtaláltad");
+
+        // Arany láda kiválasztása
+        nezet.getCmbLadak().setSelectedItem("Arany");
+        nezet.getbtnValaszt().doClick();
+        assert nezet.edpValasz.getText().equals("Arany láda nem rejti a kincset");
+
+        // Bronz láda kiválasztása
+        nezet.getCmbLadak().setSelectedItem("Bronz");
+        nezet.getbtnValaszt().doClick();
+        assert nezet.edpValasz.getText().equals("Bronz láda nem rejti a kincset");
 
     }
 
