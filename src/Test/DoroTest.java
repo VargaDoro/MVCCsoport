@@ -1,13 +1,13 @@
-// Teszt fájl
 package test;
 
 import modell.LadaModell;
 import vezerlo.GUIVezerlo;
+import nezet.GUINezet; // <- használd a konkrét GUI osztályt, ha van ilyen
 
 public class DoroTest {
 
     private LadaModell modell;
-    private MockGUINezet nezet;
+    private GUINezet nezet; // konkrét GUI osztály
     private GUIVezerlo vezerlo;
 
     public static void main(String[] args) {
@@ -16,42 +16,23 @@ public class DoroTest {
 
     public DoroTest() {
         this.modell = new LadaModell();
-        this.nezet = new MockGUINezet();
+        this.nezet = new GUINezet(); // csak ha ez egy valós GUI osztály
         this.vezerlo = new GUIVezerlo(modell, nezet);
-        
-        testJoFelirat();
-        testHibasFelirat();
+
+        testJoFelirat("Arany", "én rejtem a kincset");
+        testJoFelirat("Bronz", "hazudik az arany");
     }
 
-    private void testJoFelirat() {
-        System.out.println(">>> Jó felirat teszt (Arany)");
+    private void testJoFelirat(String ladaNev, String vartFelirat) {
+        System.out.println(">>> Teszt: " + ladaNev);
 
-        nezet.setLada("Arany"); // Ez a teszt input
-        vezerloTesztHivas(); // Meghívja a megfelelő metódust
-        
-        String vartFelirat = "én rejtem a kincset";
-        String kapottFelirat = modell.getSzoveg();
+        modell.setLada(ladaNev);              // beállítjuk a ládát
+        vezerlo.ladaSzovegek();               // meghívjuk a vezérlő logikát
+        String kapottFelirat = modell.getSzoveg(); // lekérjük az eredményt
 
-        assert vartFelirat.equals(kapottFelirat) : "❌ HIBA: Nem jó a felirat (Arany)";
-        System.out.println("✅ OK: Arany felirat megfelelő");
-    }
+        assert vartFelirat.equals(kapottFelirat) 
+            : "❌ HIBA: Várt: \"" + vartFelirat + "\", de kaptuk: \"" + kapottFelirat + "\"";
 
-    private void testHibasFelirat() {
-        System.out.println(">>> Hibás felirat teszt (Bronz)");
-
-        nezet.setLada("Bronz");
-        vezerloTesztHivas();
-
-        String vartFelirat = "hazudik az arany";
-        String kapottFelirat = modell.getSzoveg();
-
-        assert vartFelirat.equals(kapottFelirat) : "❌ HIBA: Nem jó a felirat (Bronz)";
-        System.out.println("✅ OK: Bronz felirat megfelelő");
-    }
-
-    private void vezerloTesztHivas() {
-        // Közvetlenül meghívjuk a vezérlő privát metódusát, de ehhez refaktorálni kell nyilvánosra
-        // Ideiglenesen tegyük láthatóvá a vezérlőben:
-        String szoveg = vezerlo.ladaSzovegek();
+        System.out.println("✅ OK: " + ladaNev + " felirat megfelelő");
     }
 }
