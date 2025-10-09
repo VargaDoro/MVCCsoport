@@ -15,41 +15,43 @@ public class LadaValasztasTest {
 
         LadaValasztasTest teszt = new LadaValasztasTest();
 
-        teszt.testMindenLadanVanFelirat(modell);
-        teszt.testFeliratokSzovege(modell);
-        teszt.testNemLetezoLadaraHivatkozunk(modell);
-        teszt.testBenneAKincsNincsBenne(nezet, modell, vezerlo);
-        teszt.testVisszajelzesSzovegeMegfelelo(nezet);
-        teszt.testSzovegetAdunkMegASzamHelyett(nezet, vezerlo);
+        teszt.testMindenLadanVanFelirat();
+        teszt.testFeliratokSzovege();
+        teszt.testNemLetezoLadaraHivatkozunk();
+        teszt.testBenneAKincsNincsBenne();
+        teszt.testVisszajelzesSzovegeMegfelelo();
+        teszt.testSzovegetAdunkMegASzamHelyett();
 
         System.out.println("Minden teszt sikeresen lefutott.");
     }
 
-    public void testMindenLadanVanFelirat(LadaModell modell) {
+    public void testMindenLadanVanFelirat() {
         //Doro
     }
 
-    public void testFeliratokSzovege(LadaModell modell) {
+    public void testFeliratokSzovege() {
         //Doro
     }
 
-    public void testCsakAzEgyikbenVanKincs(LadaModell modell) {
+    public void testCsakAzEgyikbenVanKincs() {
         //Eszter
     }
 
-    public void testNemLetezoLadaraHivatkozunk(LadaModell modell) {
+    public void testNemLetezoLadaraHivatkozunk() {
         //Viki
+        
     }
 
-    public void testBenneAKincsNincsBenne(GUINezet nezet, LadaModell modell, GUIVezerlo vezerlo) {
+    public void testBenneAKincsNincsBenne() {
         //Eszter
     }
 
-    public void testVisszajelzesSzovegeMegfelelo(GUINezet nezet) {
+    public void testVisszajelzesSzovegeMegfelelo() {
         //Viki
+        
     }
 
-    public void testSzovegetAdunkMegASzamHelyett(GUINezet nezet, GUIVezerlo vezerlo) {
+    public void testSzovegetAdunkMegASzamHelyett() {
         //Doro
     }
 
