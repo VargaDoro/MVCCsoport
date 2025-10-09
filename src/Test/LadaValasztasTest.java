@@ -8,27 +8,13 @@ import nezet.GUINezet;
 public class LadaValasztasTest {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
-        LadaValasztasTest teszt = new LadaValasztasTest();
-=======
         SwingUtilities.invokeLater(()->{
             LadaModell modell = new LadaModell();
             GUINezet nezet = new GUINezet(); // vagy konkrét implementáció pl. LadaGUI
             GUIVezerlo vezerlo = new GUIVezerlo(modell, nezet);
->>>>>>> 449dba614a378570e489066c9b33901247556185
 
             vezerlo.feladat(); // ha ez valamit inicializál a GUI-n
 
-<<<<<<< HEAD
-        teszt.testMindenLadanVanFelirat(modell);
-        teszt.testFeliratokSzovege(modell);
-        teszt.testNemLetezoLadaraHivatkozunk(modell);
-        teszt.testBenneAKincsNincsBenne(nezet, modell, vezerlo);
-        teszt.testVisszajelzesSzovegeMegfelelo(nezet);
-        teszt.testSzovegetAdunkMegASzamHelyett(nezet, vezerlo);
-
-        System.out.println("Minden teszt sikeresen lefutott.");
-=======
             LadaValasztasTest teszt = new LadaValasztasTest();
 
             teszt.testMindenLadanVanFelirat(modell);
@@ -38,7 +24,6 @@ public class LadaValasztasTest {
             teszt.testVisszajelzesSzovegeMegfelelo(nezet);
             teszt.testSzovegetAdunkMegASzamHelyett(nezet, vezerlo);
         });
->>>>>>> 449dba614a378570e489066c9b33901247556185
     }
 
     public void testMindenLadanVanFelirat(LadaModell modell) {
