@@ -35,6 +35,23 @@ public class LadaValasztasTest {
 
     public void testCsakAzEgyikbenVanKincs(LadaModell modell) {
         //Eszter
+
+        modell.setLada("Ezüst");
+        modell.setSzoveg("JEJ megtaláltad");
+        String ezustValasz = modell.getSzoveg();
+
+        modell.setLada("Arany");
+        modell.setSzoveg("Arany láda nem rejti a kincset");
+        String aranyValasz = modell.getSzoveg();
+
+        modell.setLada("Bronz");
+        modell.setSzoveg("Bronz láda nem rejti a kincset");
+        String bronzValasz = modell.getSzoveg();
+
+        assert ezustValasz.equals("JEJ megtaláltad");
+        assert !aranyValasz.equals("JEJ megtaláltad");
+        assert !bronzValasz.equals("JEJ megtaláltad");
+        System.out.println(" testCsakAzEgyikbenVanKincs teszt sikeresen lefutott.");
     }
 
     public void testNemLetezoLadaraHivatkozunk(LadaModell modell) {
@@ -43,6 +60,7 @@ public class LadaValasztasTest {
 
     public void testBenneAKincsNincsBenne(GUINezet nezet, LadaModell modell, GUIVezerlo vezerlo) {
         //Eszter
+
     }
 
     public void testVisszajelzesSzovegeMegfelelo(GUINezet nezet) {
