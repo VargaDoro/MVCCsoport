@@ -1,5 +1,6 @@
-package Test;
+package test;
 
+import javax.swing.SwingUtilities;
 import modell.LadaModell;
 import vezerlo.GUIVezerlo;
 import nezet.GUINezet;
@@ -7,13 +8,18 @@ import nezet.GUINezet;
 public class LadaValasztasTest {
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         LadaValasztasTest teszt = new LadaValasztasTest();
+=======
+        SwingUtilities.invokeLater(()->{
+            LadaModell modell = new LadaModell();
+            GUINezet nezet = new GUINezet(); // vagy konkrét implementáció pl. LadaGUI
+            GUIVezerlo vezerlo = new GUIVezerlo(modell, nezet);
+>>>>>>> 449dba614a378570e489066c9b33901247556185
 
-        LadaModell modell = new LadaModell();
-        GUINezet nezet = new GUINezet();
-        GUIVezerlo vezerlo = new GUIVezerlo(modell, nezet);
-        vezerlo.feladat();
+            vezerlo.feladat(); // ha ez valamit inicializál a GUI-n
 
+<<<<<<< HEAD
         teszt.testMindenLadanVanFelirat(modell);
         teszt.testFeliratokSzovege(modell);
         teszt.testNemLetezoLadaraHivatkozunk(modell);
@@ -22,17 +28,47 @@ public class LadaValasztasTest {
         teszt.testSzovegetAdunkMegASzamHelyett(nezet, vezerlo);
 
         System.out.println("Minden teszt sikeresen lefutott.");
+=======
+            LadaValasztasTest teszt = new LadaValasztasTest();
+
+            teszt.testMindenLadanVanFelirat(modell);
+            teszt.testFeliratokSzovege(modell, vezerlo);
+            teszt.testNemLetezoLadaraHivatkozunk(modell);
+            teszt.testBenneAKincsNincsBenne(nezet, modell, vezerlo);
+            teszt.testVisszajelzesSzovegeMegfelelo(nezet);
+            teszt.testSzovegetAdunkMegASzamHelyett(nezet, vezerlo);
+        });
+>>>>>>> 449dba614a378570e489066c9b33901247556185
     }
 
     public void testMindenLadanVanFelirat(LadaModell modell) {
-        //Doro
+        // TODO: Doro
     }
 
-    public void testFeliratokSzovege(LadaModell modell) {
+    public void testFeliratokSzovege(LadaModell modell, GUIVezerlo vezerlo) {
         //Doro
+        System.out.println(">>> Teszt: Feliratok szövege");
+
+        modell.setLada("Arany");
+        vezerlo.ladaSzovegek();
+        assert "én rejtem a kincset".equals(vezerlo.ladaSzovegek())
+            : "❌ HIBA: Arany láda felirata hibás";
+
+        modell.setLada("Ezüst");
+        vezerlo.ladaSzovegek();
+        assert "nem én rejtem a kincset".equals(vezerlo.ladaSzovegek())
+            : "❌ HIBA: Ezüst láda felirata hibás";
+
+        modell.setLada("Bronz");
+        vezerlo.ladaSzovegek();
+        assert "hazudik az arany".equals(vezerlo.ladaSzovegek())
+            : "❌ HIBA: Bronz láda felirata hibás";
+
+        System.out.println("✅ OK: Minden láda felirata megfelelő");
     }
 
     public void testCsakAzEgyikbenVanKincs(LadaModell modell) {
+        // TODO: Eszter
         //Eszter
 
         modell.setLada("Ezüst");
@@ -54,10 +90,11 @@ public class LadaValasztasTest {
     }
 
     public void testNemLetezoLadaraHivatkozunk(LadaModell modell) {
-        //Viki
+        // TODO: Viki
     }
 
     public void testBenneAKincsNincsBenne(GUINezet nezet, LadaModell modell, GUIVezerlo vezerlo) {
+        // TODO: Eszter
         //Eszter
 
 // Ezüst láda kiválasztása
@@ -78,11 +115,10 @@ public class LadaValasztasTest {
     }
 
     public void testVisszajelzesSzovegeMegfelelo(GUINezet nezet) {
-        //Viki
+        // TODO: Viki
     }
 
     public void testSzovegetAdunkMegASzamHelyett(GUINezet nezet, GUIVezerlo vezerlo) {
-        //Doro
+        // TODO: Doro
     }
-
 }
