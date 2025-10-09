@@ -15,7 +15,7 @@ public class VikiTest {
         new VikiTest();
 //        void testFeladat(){
 //            GUIVezerlo obj = new GUIVezerlo( modell,  nezet);
-//        }
+//        } 
 //        obj.feladat();
     }
     
