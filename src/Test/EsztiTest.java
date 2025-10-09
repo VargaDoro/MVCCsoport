@@ -7,6 +7,7 @@ import vezerlo.GUIVezerlo;
 
 public class EsztiTest {
     
+public class GUIVezerloTest {
 
     public static void main(String[] args) {
         // Tesztelés engedélyezése: java -ea GUIVezerloTest
@@ -15,5 +16,8 @@ public class EsztiTest {
         LadaModell modell = new LadaModell();
         GUIVezerlo vezerlo = new GUIVezerlo(modell, nezet);
         vezerlo.feladat();
+
+    }
+}
 
 }
